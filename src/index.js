@@ -3,9 +3,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 
 const { connect } = require("./helper/database/connect");
-
 const UserRoutes = require("./api/user/user.routes");
-const { application } = require("express");
 const setError = require("./helper/error/handle.error");
 
 connect(); //Allways before the proccess.env
@@ -13,6 +11,7 @@ connect(); //Allways before the proccess.env
 const PORT = process.env.PORT;
 const SECRET_KEY_JWT = process.env.SECRET_KEY_JWT;
 
+const app = express();
 //----------------Now we'll define our headers wich will be always the same for now, so we can copy-paste--------------------
 
 app.use((req, res, next) => {
@@ -31,7 +30,7 @@ app.use(
 
 //We also want a transition- limit in our app; so... 1mb is a lot, we normally will put less
 app.use(express.json({ limit: "1mb" }));
-app.use(express.urlencoded({ limit: "1mb" }));
+app.use(express.urlencoded({ limit: "1mb", extended: true }));
 app.set("secretKey", SECRET_KEY_JWT); //we will normally delete the one assigned at the beggining and put directly this one
 
 //--------------------------------------------------
