@@ -12,5 +12,5 @@ const readBookSchema = new mongoose.Schema(
   }
 );
 
-const ReadedB = mongoose.model("readed", readBookSchema);
-module.exports = ReadedB;
+const ReadBooks = mongoose.model("read", readBookSchema);
+module.exports = ReadBooks;
