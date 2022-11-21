@@ -1,4 +1,4 @@
-const ReadBooks = require("./readBooks.mode");
+const ReadBooks = require("./readBooks.model");
 
 const setError = require("../../helper/error/handle.error");
 

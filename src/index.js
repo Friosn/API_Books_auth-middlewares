@@ -4,6 +4,9 @@ const dotenv = require("dotenv");
 
 const { connect } = require("./helper/database/connect");
 const UserRoutes = require("./api/user/user.routes");
+const ReadBooksRoutes = require("./api/readBooks/readBooks.routes");
+const ToReadRoutes = require("./api/booksToRead/booksToRead.routes");
+const CollectionRoutes = require("./api/bookCollection/bookCollection.routes");
 const setError = require("./helper/error/handle.error");
 
 connect(); //Allways before the proccess.env
@@ -35,6 +38,9 @@ app.set("secretKey", SECRET_KEY_JWT); //we will normally delete the one assigned
 
 //--------------------------------------------------
 
+app.use("/api/user/toread", ToReadRoutes);
+app.use("/api/user/read", ReadBooksRoutes);
+app.use("/api/user/collection", CollectionRoutes);
 app.use("/api/user", UserRoutes);
 app.use("*", (req, res, next) => next(setError(404, "Route not defined")));
 
