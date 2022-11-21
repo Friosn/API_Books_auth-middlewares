@@ -17,3 +17,7 @@ userSchema.pre("save", function (next) {
   this.password = bcrypt.hashSync(this.password, 10);
   next();
 });
+
+const User = mongoose.model("user", userSchema);
+
+module.exports = User;
