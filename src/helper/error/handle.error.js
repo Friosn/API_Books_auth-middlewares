@@ -5,4 +5,4 @@ const setError = (code, message) => {
   return error;
 };
 
-module.exports = { setError };
+module.exports = setError;

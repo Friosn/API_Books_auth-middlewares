@@ -3,7 +3,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 const mongoose = require("mongoose");
 
-const { setError } = require("../error/handle.error");
+const setError = require("../error/handle.error");
 
 const MONGO_URI = process.env.MONGO_URI;
 
