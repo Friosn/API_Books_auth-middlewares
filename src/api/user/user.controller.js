@@ -2,6 +2,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 const User = require("./user.model");
+const { setError } = require("../../helper/error/handle.error");
 
 //We'll do the register now
 const register = async (req, res, next) => {
@@ -19,7 +20,7 @@ const register = async (req, res, next) => {
       data: newUserToDB,
     });
   } catch (error) {
-    console.error("User register failed!");
+    return next(setError(500, "Registration failed"));
   }
 };
 
@@ -51,7 +52,7 @@ const login = async (req, res, next) => {
       return next("Password is not correct");
     }
   } catch (error) {
-    console.error("Login failed");
+    return next(setError(500, "Login failed"));
   }
 };
 

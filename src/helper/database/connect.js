@@ -3,6 +3,8 @@ const dotenv = require("dotenv");
 dotenv.config();
 const mongoose = require("mongoose");
 
+const { setError } = require("../error/handle.error");
+
 const MONGO_URI = process.env.MONGO_URI;
 
 const connect = async () => {
@@ -16,7 +18,7 @@ const connect = async () => {
       `Conected to the data-base: ${name} || in the host: ${host} 🚀 🌕`
     );
   } catch (error) {
-    console.error("We could not connect with the data-base 😣");
+    console.error(setError(511, "We could not connect with the data-base 😣"));
   }
 };
 
