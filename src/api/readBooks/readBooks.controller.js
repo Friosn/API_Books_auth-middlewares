@@ -2,6 +2,8 @@ const ReadBooks = require("./readBooks.model");
 
 const setError = require("../../helper/error/handle.error");
 
+//Middleware -> isAuth => return the books
+
 const getRead = async (req, res, next) => {
   try {
     const read = await ReadBooks.find();
