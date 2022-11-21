@@ -56,4 +56,13 @@ const login = async (req, res, next) => {
   }
 };
 
-module.exports = { register, login };
+const getUsers = async (req, res, next) => {
+  try {
+    const users = await User.find();
+    return res.status(200).json(users);
+  } catch (error) {
+    return next(setError(500, "No users to recover"));
+  }
+};
+
+module.exports = { register, login, getUsers };
