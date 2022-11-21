@@ -1,0 +1,31 @@
+{
+  "name": "api_books_auth-middlewares",
+  "version": "1.0.0",
+  "description": "Theme: 📚 .  This proyect id focused on improving my APIs adding authentification, tokenization and middlewares",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Friosn/API_Books_auth-middlewares.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Friosn/API_Books_auth-middlewares/issues"
+  },
+  "homepage": "https://github.com/Friosn/API_Books_auth-middlewares#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.7.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
